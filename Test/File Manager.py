@@ -54,3 +54,12 @@ def delete_file():
     del_name = input("enter file name with extention do you want to delete :")
     os.system("del " +del_name)
 
+def write_file():
+    print("================================================")
+    print("==================Write File====================")
+    print("================================================")
+    print("================================================")
+
+    input_line = input("enter that you want to wite in your :")
+    file_name = input("enter file name with extention to input that content:")
+    os.system("echo " +input_line+" > "+file_name)
