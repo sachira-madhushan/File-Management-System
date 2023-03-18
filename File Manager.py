@@ -6,6 +6,7 @@ os.system("title=File Management System v1.0")
 os.system("color 02")
 #system window settings end
 
+#logo animation for main page
 def logo():
 	os.system("cls")
 	print("================================================")
@@ -19,8 +20,10 @@ def logo():
 	os.system("color 02")
 	os.system("echo [Current location] %cd%")
 	print()
+#end of logo animation function
 
 
+#options function
 def options():
 	print("[v1.0]Let's see what we can do:")
 	print("\t[1]-List files and folders")
@@ -40,8 +43,13 @@ def options():
 		createDir()
 	if x==3:
 		changeLocation()
+	if x==4:
+		renameDir()
+
+#end of options function
 
 
+#this function is use to list the directories and files in side the current directory
 def listDir():
 	os.system("cls")
 	print("================================================")
@@ -56,7 +64,10 @@ def listDir():
 	os.system("pause>>nul")
 	logo()
 	options()
+#end of the listDir function
 
+
+#this function is used to create new directory inside the current directory
 def createDir():
 	os.system("cls")
 	print("================================================")
@@ -80,7 +91,9 @@ def createDir():
 		os.system("pause>>nul")
 		logo()
 		options()
+#end of createDir dunction
 
+#this function is used to change the current location of the therminal
 def changeLocation():
 	os.system("cls")
 	print("================================================")
@@ -110,11 +123,66 @@ def changeLocation():
 		os.system("pause")
 		changeLocation()
 	else:
+		os.system("cls")
 		print("[Failed]Invalied folder!")
 		print("[!]Press any key to go back.")
 		os.system("pause>>nul")
 		changeLocation()
-	
+#end of changeLocation function
+
+
+#this function is used to rename a folder
+def renameDir():
+	os.system("cls")
+    print("================================================")
+    print("==================Rename Folder=================")
+    print("================================================")
+    print("================================================")
+	print()
+    print("[>]Folder List")
+	os.system("dir /ad")
+	print()
+    oldname = input("[?]Folder name that you want rename :")
+    newname = input("[?]New folder name :")
+    if os.path.exists(os.path.join(os.getcwd(),oldname)):
+    	os.system("cls")
+		print("[Failed]Folder not found!")
+		print("[!]Press any key to go back.")
+		os.system("pause>>nul")
+		renameDir()
+    elif os.path.exists(os.path.join(os.getcwd(),newname)):
+    	os.system("cls")
+		print("[Failed]Folder already exists!")
+		print("[!]Press any key to go back.")
+		os.system("pause>>nul")
+		renameDir()
+	else:
+		os.system("ren " + oldname + " " + newname)
+		renameDir()
+#end of renameDir function
+ 
+#this function is used to delete a folder
+def delDir():
+	os.system("cls")
+    print("================================================")
+    print("==================Delete Folder=================")
+    print("================================================")
+    print("================================================")
+	print()
+    print("[>]Folder List")
+	os.system("dir /ad")
+	print()
+    name= input ("[?]Folder that you want to delete :")
+    if os.path.exists(os.path.join(os.getcwd(),name)):
+		os.system("rmdir "+name)
+		delDir()
+	else:
+		os.system("cls")
+		print("[Failed]Invalied folder!")
+		print("[!]Press any key to go back.")
+		os.system("pause>>nul")
+		delDir()
+#end of the delDir function
 
 logo()
 options()
