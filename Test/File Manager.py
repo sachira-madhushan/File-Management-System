@@ -35,3 +35,22 @@ def create_file() :
     filename = input("enter file name that you want to create (plase enter name with extention) :")
     os.system("echo >  " + filename)
 
+def rename_file():
+    print("================================================")
+    print("==================Rename File===================")
+    print("================================================")
+    print("================================================")
+
+    oldname = input("enter file name with extention that you want rename ?")
+    newname = input("enter new file name with extention to that you want to rename?")
+    os.system("ren " + oldname + " " + newname)
+
+def delete_file():
+    print("================================================")
+    print("==================Delete File===================")
+    print("================================================")
+    print("================================================")
+
+    del_name = input("enter file name with extention do you want to delete :")
+    os.system("del " +del_name)
+
