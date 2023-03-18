@@ -205,7 +205,43 @@ def createFile():
 		options()
 #end of createFile function
 
+#this function is used to rename a file
+def renFile():
+	os.system("cls")
+	print("================================================")
+	print("==================Rename File===================")
+	print("================================================")
+	print("================================================")
+	print()
+	oldname = input("[?]File name with extention that you want rename :")
+	newname = input("[?]New file name with extention :")
+	if os.path.exists(os.path.join(os.getcwd(),oldname)) && !(os.path.exists(os.path.join(os.getcwd(),newname))):
+			os.system("ren " + oldname + " " + newname)
+			logo()
+			options()
 
+	elif os.path.exists(os.path.join(os.getcwd(),oldname)) && os.path.exists(os.path.join(os.getcwd(),newname)):
+		os.system("cls")
+		print("[Failed]File is already exists!")
+		print("[!]Press any key to go back.")
+		os.system("pause>>nul")
+		renFile()
+
+
+	elif !(os.path.exists(os.path.join(os.getcwd(),oldname))) && os.path.exists(os.path.join(os.getcwd(),newname)):
+		os.system("cls")
+		print("[Failed]Invalied file!")
+		print("[!]Press any key to go back.")
+		os.system("pause>>nul")
+		renFile()
+
+	else:
+		os.system("cls")
+		print("[Failed]File is already exists!")
+		print("[!]Press any key to go back.")
+		os.system("pause>>nul")
+		createFile()
+#end of renFile function
 logo()
 options()
 os.system("pause")
