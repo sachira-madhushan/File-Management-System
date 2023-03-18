@@ -38,6 +38,8 @@ def options():
 		listDir()
 	if x==2:
 		createDir()
+	if x==3:
+		changeLocation()
 
 
 def listDir():
@@ -58,7 +60,7 @@ def listDir():
 def createDir():
 	os.system("cls")
 	print("================================================")
-	print("================Create Directory================")
+	print("==================Create Folder=================")
 	print("================================================")
 	print("================================================")
 	print()
@@ -79,6 +81,35 @@ def createDir():
 		logo()
 		options()
 
+def changeLocation():
+	os.system("cls")
+	print("================================================")
+	print("=================Change Location================")
+	print("================================================")
+	print("================================================")
+	print()
+	print()
+	os.system("echo [Current location] %cd%")
+	print()
+	print("[>]Folder List")
+	os.system("dir /ad")
+	print()
+	print("[>]Tips")
+	print("\t[*]To go back use two dots")
+	print("\t[*]If you done changing location type done")
+	print()
+	x=input("[?]Folder name to go :")
+	if x=="..":
+		os.system("cd ..")
+		changeLocation()
+	if os.path.exists(os.path.join(os.getcwd(),x):
+		os.system("cd "+x)
+		changeLocation()
+	else:
+		print("[Failed]Invalied folder!")
+		print("[!]Press any key to go back.")
+		os.system("pause>>nul")
+		changeLocation()
 
 logo()
 options()
