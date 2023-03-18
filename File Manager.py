@@ -106,7 +106,8 @@ def changeLocation():
 		logo()
 		options()
 	elif os.path.exists(os.path.join(os.getcwd(),x)):
-		os.system("cd "+x)
+		os.chdir(x)
+		os.system("pause")
 		changeLocation()
 	else:
 		print("[Failed]Invalied folder!")
