@@ -25,3 +25,5 @@ def delete_folder():
 
     del_filename = input ("enter name that you want to delete :")
     os.system("rmdir "+del_filename)
+
+de
