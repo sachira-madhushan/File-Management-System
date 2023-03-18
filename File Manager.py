@@ -280,16 +280,16 @@ def delFile():
 def writeFile():
 	os.system("cls")
 	print("================================================")
-    print("==================Write File====================")
-    print("================================================")
-    print("================================================")
-    print()
+	print("==================Write File====================")
+	print("================================================")
+	print("================================================")
+	print()
 	print("[>]File List")
 	os.system("dir")
 	print()
-    file_name = input("[?]File name with extention :")
-    input_line = input("[?]Write something :")
-    if os.path.exists(os.path.join(os.getcwd(),name)):
+	file_name = input("[?]File name with extention :")
+	input_line = input("[?]Write something :")
+	if os.path.exists(os.path.join(os.getcwd(),name)):
 		os.system("echo " +input_line+" > "+file_name)
 		logo()
 		options()
@@ -300,6 +300,11 @@ def writeFile():
 		os.system("pause>>nul")
 		writeFile()
 #end of writeFile funtion
-logo()
-options()
+
+#main funtion it will call logo funtion and options function
+def main():
+	logo()
+	options()
+
+main()
 os.system("pause")
