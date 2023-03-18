@@ -1,7 +1,7 @@
 import os
 
 #system window settings 
-os.system("mode con:cols=50 lines=30");
+os.system("mode con:cols=100 lines=30");
 os.system("title=File Management System v1.0")
 os.system("color 02")
 #system window settings end
@@ -307,7 +307,7 @@ def writeFile():
 	print()
 	file_name = input("[?]File name with extention :")
 	input_line = input("[?]Write something :")
-	if os.path.exists(os.path.join(os.getcwd(),name)):
+	if os.path.exists(os.path.join(os.getcwd(),file_name)):
 		os.system("echo " +input_line+" > "+file_name)
 		logo()
 		options()
