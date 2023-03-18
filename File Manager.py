@@ -44,6 +44,8 @@ def options():
 		delDir()
 	if x==6:
 		createFile()
+	if x==7:
+		renFile()
 #end of options function
 
 
@@ -242,6 +244,7 @@ def renFile():
 		os.system("pause>>nul")
 		createFile()
 #end of renFile function
+
 logo()
 options()
 os.system("pause")
