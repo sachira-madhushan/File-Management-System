@@ -48,6 +48,8 @@ def options():
 		renFile()
 	if x==8:
 		delFile()
+	if x==9:
+		writeFile()
 #end of options function
 
 
@@ -217,6 +219,9 @@ def renFile():
 	print("================================================")
 	print("================================================")
 	print()
+	print("[>]File List")
+	os.system("dir")
+	print()
 	oldname = input("[?]File name with extention that you want rename :")
 	newname = input("[?]New file name with extention :")
 	if os.path.exists(os.path.join(os.getcwd(),oldname)) and not(os.path.exists(os.path.join(os.getcwd(),newname))):
@@ -244,11 +249,56 @@ def renFile():
 		print("[Failed]File is already exists!")
 		print("[!]Press any key to go back.")
 		os.system("pause>>nul")
-		createFile()
+		renFile()
 #end of renFile function
 
+#this function is used to delete a file
 def delFile():
+	os.system("cls")
+	print("================================================")
+	print("==================Delete File===================")
+	print("================================================")
+	print("================================================")
 	print()
+	print("[>]File List")
+	os.system("dir")
+	print()
+	name = input("[?]File name with extention :")
+	if os.path.exists(os.path.join(os.getcwd(),name)):
+		os.system("del " +name)
+		logo()
+		options()
+	else:
+		os.system("cls")
+		print("[Failed]Invalied file!")
+		print("[!]Press any key to go back.")
+		os.system("pause>>nul")
+		delFile()
+#end of the delFile function
+
+def writeFile():
+	os.system("cls")
+	print("================================================")
+    print("==================Write File====================")
+    print("================================================")
+    print("================================================")
+    print()
+	print("[>]File List")
+	os.system("dir")
+	print()
+    file_name = input("[?]File name with extention :")
+    input_line = input("[?]Write something :")
+    if os.path.exists(os.path.join(os.getcwd(),name)):
+		os.system("echo " +input_line+" > "+file_name)
+		logo()
+		options()
+	else:
+		os.system("cls")
+		print("[Failed]Invalied file!")
+		print("[!]Press any key to go back.")
+		os.system("pause>>nul")
+		writeFile()
+    
 logo()
 options()
 os.system("pause")
