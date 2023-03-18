@@ -117,7 +117,7 @@ def changeLocation():
 	print()
 	x=input("[?]Folder name to go :")
 	if x=="..":
-		os.system("cd ..")
+		os.chdir("..")
 		changeLocation()
 	elif x=="done":
 		logo()
@@ -276,6 +276,7 @@ def delFile():
 		delFile()
 #end of the delFile function
 
+#this funtion is used to write a something on to the file 
 def writeFile():
 	os.system("cls")
 	print("================================================")
@@ -298,7 +299,7 @@ def writeFile():
 		print("[!]Press any key to go back.")
 		os.system("pause>>nul")
 		writeFile()
-    
+#end of writeFile funtion
 logo()
 options()
 os.system("pause")
