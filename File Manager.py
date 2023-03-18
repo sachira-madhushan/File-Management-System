@@ -102,7 +102,10 @@ def changeLocation():
 	if x=="..":
 		os.system("cd ..")
 		changeLocation()
-	if os.path.exists(os.path.join(os.getcwd(),x):
+	elif x=="done":
+		logo()
+		options()
+	elif os.path.exists(os.path.join(os.getcwd(),x)):
 		os.system("cd "+x)
 		changeLocation()
 	else:
@@ -110,6 +113,7 @@ def changeLocation():
 		print("[!]Press any key to go back.")
 		os.system("pause>>nul")
 		changeLocation()
+	
 
 logo()
 options()
