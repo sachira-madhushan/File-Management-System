@@ -319,7 +319,7 @@ def writeFile():
 		writeFile()
 #end of writeFile funtion
 
-#main funtion it will call logo funtion and options function
+#main funtion: it will call logo funtion and options function
 def main():
 	logo()
 	options()
