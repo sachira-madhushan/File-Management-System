@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="151272ad-f5a9-4b9f-a745-1d4a9122f92c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/test by ranjula/test function.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/File Manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test/File Manager.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
