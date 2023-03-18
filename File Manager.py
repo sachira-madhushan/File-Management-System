@@ -56,14 +56,29 @@ def listDir():
 	options()
 
 def createDir():
+	os.system("cls")
 	print("================================================")
 	print("================Create Directory================")
 	print("================================================")
 	print("================================================")
 	print()
 	print()
-	dname=int(input("[?]Directory name :"))
-	
+	dname=input("[?]folder name :")
+	if os.path.exists(os.path.join(os.getcwd(),dname)):
+		os.system("cls")
+		print("[Failed]Folder already exists!")
+		print("[!]Press any key to go back.")
+		os.system("pause>>nul")
+		createDir()
+	else:
+		os.system("mkdir "+dname)
+		os.system("cls")
+		print("[Done]Folder created!")
+		print("[!]Press any key to go back.")
+		os.system("pause>>nul")
+		logo()
+		options()
+
 
 logo()
 options()
