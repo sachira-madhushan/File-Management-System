@@ -308,7 +308,7 @@ def writeFile():
 	file_name = input("[?]File name with extention :")
 	input_line = input("[?]Write something :")
 	if os.path.exists(os.path.join(os.getcwd(),file_name)):
-		os.system("echo " +input_line+" > "+file_name)
+		os.system("echo " +input_line+" >> "+file_name)
 		logo()
 		options()
 	else:
