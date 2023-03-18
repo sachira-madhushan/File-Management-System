@@ -46,6 +46,8 @@ def options():
 		createFile()
 	if x==7:
 		renFile()
+	if x==8:
+		delFile()
 #end of options function
 
 
@@ -217,12 +219,12 @@ def renFile():
 	print()
 	oldname = input("[?]File name with extention that you want rename :")
 	newname = input("[?]New file name with extention :")
-	if os.path.exists(os.path.join(os.getcwd(),oldname)) && !(os.path.exists(os.path.join(os.getcwd(),newname))):
+	if os.path.exists(os.path.join(os.getcwd(),oldname)) and not(os.path.exists(os.path.join(os.getcwd(),newname))):
 			os.system("ren " + oldname + " " + newname)
 			logo()
 			options()
 
-	elif os.path.exists(os.path.join(os.getcwd(),oldname)) && os.path.exists(os.path.join(os.getcwd(),newname)):
+	elif os.path.exists(os.path.join(os.getcwd(),oldname)) and os.path.exists(os.path.join(os.getcwd(),newname)):
 		os.system("cls")
 		print("[Failed]File is already exists!")
 		print("[!]Press any key to go back.")
@@ -230,7 +232,7 @@ def renFile():
 		renFile()
 
 
-	elif !(os.path.exists(os.path.join(os.getcwd(),oldname))) && os.path.exists(os.path.join(os.getcwd(),newname)):
+	elif not(os.path.exists(os.path.join(os.getcwd(),oldname)))and os.path.exists(os.path.join(os.getcwd(),newname)):
 		os.system("cls")
 		print("[Failed]Invalied file!")
 		print("[!]Press any key to go back.")
@@ -245,6 +247,8 @@ def renFile():
 		createFile()
 #end of renFile function
 
+def delFile():
+	print()
 logo()
 options()
 os.system("pause")
