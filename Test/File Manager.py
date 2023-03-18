@@ -32,6 +32,6 @@ def create_file() :
     print("================================================")
     print("================================================")
 
-    filename = input("enter file name that you want to create  :")
-    os.system("echo -n /"/" >  " + filename)
+    filename = input("enter file name that you want to create (plase enter name with extention) :")
+    os.system("echo >  " + filename)
 
