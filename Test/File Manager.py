@@ -26,4 +26,12 @@ def delete_folder():
     del_filename = input ("enter name that you want to delete :")
     os.system("rmdir "+del_filename)
 
-de
+def create_file() :
+    print("================================================")
+    print("==================Create File===================")
+    print("================================================")
+    print("================================================")
+
+    filename = input("enter file name that you want to create  :")
+    os.system("echo -n /"/" >  " + filename)
+
