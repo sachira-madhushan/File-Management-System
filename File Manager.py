@@ -23,23 +23,27 @@ def logo():
 
 def options():
 	print("[v1.0]Let's see what we can do:")
-	print("\t[1]-List directories")
-	print("\t[2]-Create directory")
-	print("\t[3]-Change directory")
-	print("\t[4]-Rename directory")
-	print("\t[5]-Delete directory")
+	print("\t[1]-List files and folders")
+	print("\t[2]-Create folder")
+	print("\t[3]-Change location")
+	print("\t[4]-Rename folder")
+	print("\t[5]-Delete folder")
 	print("\t[6]-Create file")
 	print("\t[7]-Rename file")
 	print("\t[8]-Delete file")
 	print("\t[9]-Write file")
 	print()
 	x=int(input("[?]Select your option :"))
+	if x==1:
+		listDir()
+	if x==2:
+		createDir()
 
 
 def listDir():
 	os.system("cls")
 	print("================================================")
-	print("===================Directories==================")
+	print("================Files and folders===============")
 	print("================================================")
 	print("================================================")
 	print()
@@ -50,6 +54,16 @@ def listDir():
 	os.system("pause>>nul")
 	logo()
 	options()
+
+def createDir():
+	print("================================================")
+	print("================Create Directory================")
+	print("================================================")
+	print("================================================")
+	print()
+	print()
+	dname=int(input("[?]Directory name :"))
+	
 
 logo()
 options()
