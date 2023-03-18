@@ -30,6 +30,7 @@ def options():
 	print("\t[7]-Rename file")
 	print("\t[8]-Delete file")
 	print("\t[9]-Write file")
+	print("\t[10]-Exit")
 	print()
 	x=int(input("[?]Select your option :"))
 	if x==1:
@@ -50,6 +51,16 @@ def options():
 		delFile()
 	if x==9:
 		writeFile()
+	if x==10:
+		os.system("exit")
+	else:
+		os.system("cls")
+		print()
+		print("[!]Invalied option.")
+		print("[!]Press any key to go back.")
+		os.system("pause>>nul")
+		logo()
+		options()
 #end of options function
 
 
@@ -148,21 +159,28 @@ def renameDir():
 	print()
 	oldname = input("[?]Folder name that you want rename :")
 	newname = input("[?]New folder name :")
-	if os.path.exists(os.path.join(os.getcwd(),oldname)):
+	if os.path.exists(os.path.join(os.getcwd(),oldname)) and not(os.path.exists(os.path.join(os.getcwd(),newname))):
+		os.system("ren " + oldname + " " + newname)
+		logo()
+		options()
 		os.system("cls")
 		print("[Failed]Folder not found!")
 		print("[!]Press any key to go back.")
 		os.system("pause>>nul")
 		renameDir()
-	elif os.path.exists(os.path.join(os.getcwd(),newname)):
+	elif not(os.path.exists(os.path.join(os.getcwd(),oldname))):
+		os.system("cls")
+		print("[Failed]Folder not found!")
+		print("[!]Press any key to go back.")
+		os.system("pause>>nul")
+		renameDir()
+	else:
 		os.system("cls")
 		print("[Failed]Folder already exists!")
 		print("[!]Press any key to go back.")
 		os.system("pause>>nul")
 		renameDir()
-	else:
-		os.system("ren " + oldname + " " + newname)
-		renameDir()
+		
 #end of renameDir function
  
 #this function is used to delete a folder
@@ -305,6 +323,7 @@ def writeFile():
 def main():
 	logo()
 	options()
+#end of main function
 
+#call the main function
 main()
-os.system("pause")
